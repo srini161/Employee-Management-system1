@@ -8,26 +8,35 @@
     Dim i As Object
 
     Public Sub Create()
-        While abc <= 5
-            Console.WriteLine("Enter id: ")
-            id = Convert.ToInt32(Console.ReadLine())
-            ArrayList.Add(id)
-            Console.WriteLine("Enter Name: ")
-            Name = Console.ReadLine
-            ArrayList.Add(Name)
-            Console.WriteLine("Enter DOB: ")
-            DateOfBirth = Console.ReadLine()
-            ArrayList.Add(DateOfBirth)
-            Console.WriteLine("Enter Active" + vbCrLf)
-            Active = Console.ReadLine()
-            ArrayList.Add(Active)
+        Dim quit As String
+        Console.WriteLine("Enter to continue/quit: ")
+        quit = Console.ReadLine()
+        If quit = "quit" Then
+            Console.WriteLine("Done")
+        Else
+            While abc <= 5
 
-            For Each i In ArrayList
-                Console.WriteLine("Employees details are: {0}", i)
-            Next i
-            Console.WriteLine()
-            Console.ReadKey()
+                Console.WriteLine("Enter id: ")
+                id = Convert.ToInt32(Console.ReadLine())
+                ArrayList.Add(id)
+                Console.WriteLine("Enter Name: ")
+                Name = Console.ReadLine
+                ArrayList.Add(Name)
+                Console.WriteLine("Enter DOB: ")
+                DateOfBirth = Console.ReadLine()
+                ArrayList.Add(DateOfBirth)
+                Console.WriteLine("Enter Active" + vbCrLf)
+                Active = Console.ReadLine()
+                ArrayList.Add(Active)
+
+                For Each i In ArrayList
+                    Console.WriteLine("Employees details are: {0}", i)
+                Next i
+                Console.WriteLine()
+                Console.ReadKey()
         End While
+        End If
+
     End Sub
 End Class
 
