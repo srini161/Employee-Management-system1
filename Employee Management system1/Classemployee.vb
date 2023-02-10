@@ -11,21 +11,21 @@
         While abc <= 5
             Console.WriteLine("Enter id: ")
             id = Convert.ToInt32(Console.ReadLine())
-        ArrayList.Add(id)
-        Console.WriteLine("Enter Name: ")
-        Name = Console.ReadLine
-        ArrayList.Add(Name)
-        Console.WriteLine("Enter DOB: ")
-        DateOfBirth = Console.ReadLine()
-        ArrayList.Add(DateOfBirth)
+            ArrayList.Add(id)
+            Console.WriteLine("Enter Name: ")
+            Name = Console.ReadLine
+            ArrayList.Add(Name)
+            Console.WriteLine("Enter DOB: ")
+            DateOfBirth = Console.ReadLine()
+            ArrayList.Add(DateOfBirth)
             Console.WriteLine("Enter Active" + vbCrLf)
             Active = Console.ReadLine()
-        ArrayList.Add(Active)
+            ArrayList.Add(Active)
 
             For Each i In ArrayList
                 Console.WriteLine("Employees details are: {0}", i)
             Next i
-        Console.WriteLine()
+            Console.WriteLine()
             Console.ReadKey()
         End While
     End Sub
