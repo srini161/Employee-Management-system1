@@ -1,42 +1,81 @@
-﻿Public Class Classemployee
+﻿Imports System.Security.Cryptography.X509Certificates
+
+Public Class Classemployee
     Public id As Int16
     Public Name As String
-    Public DateOfBirth As String
+    Public DateOfBirth As DateTime
+    Public salary As Double
     Public Active As Boolean
-    Public abc As Double
-    Public ArrayList As ArrayList = New ArrayList()
     Dim i As Object
 
-    Public Sub Create()
-        Dim quit As String
-        Console.WriteLine("Enter to continue/quit: ")
-        quit = Console.ReadLine()
-        If quit = "quit" Then
-            Console.WriteLine("Done")
+
+    Public Function Create()
+        Dim EmpDetails1 As Classemployee = New Classemployee
+
+
+        Console.WriteLine("Enter id: ")
+        EmpDetails1.id = Convert.ToInt32(Console.ReadLine())
+
+        Console.WriteLine("Enter Name: ")
+        EmpDetails1.Name = Console.ReadLine
+
+        Console.WriteLine("Enter DOB: ")
+        EmpDetails1.DateOfBirth = Console.ReadLine()
+
+        Console.WriteLine("Enter Salary: ")
+        EmpDetails1.salary = Convert.ToDouble(Console.ReadLine())
+
+        Console.WriteLine("Enter Employee Active(Y/N)" + vbCrLf)
+        Dim UserInput As String = Console.ReadLine()
+        If UserInput.ToUpper = "Y" Then
+            Active = True
         Else
-            While abc <= 5
-
-                Console.WriteLine("Enter id: ")
-                id = Convert.ToInt32(Console.ReadLine())
-                ArrayList.Add(id)
-                Console.WriteLine("Enter Name: ")
-                Name = Console.ReadLine
-                ArrayList.Add(Name)
-                Console.WriteLine("Enter DOB: ")
-                DateOfBirth = Console.ReadLine()
-                ArrayList.Add(DateOfBirth)
-                Console.WriteLine("Enter Active" + vbCrLf)
-                Active = Console.ReadLine()
-                ArrayList.Add(Active)
-
-                For Each i In ArrayList
-                    Console.WriteLine("Employees details are: {0}", i)
-                Next i
-                Console.WriteLine()
-                Console.ReadKey()
-        End While
+            Active = False
         End If
+        Console.WriteLine("Employee created with given examples")
+        Return EmpDetails1
+
+    End Function
+    Public Sub Update(ByRef array1 As ArrayList)
+        Dim EmployeeExists As Boolean = False
+        Dim Empolyee1 As Classemployee = New Classemployee
+        Console.WriteLine("Enter Emp Id to update: ")
+        Empolyee1.id = Convert.ToInt32(Console.ReadLine())
+        Console.WriteLine("Enter Emp new salary:")
+        Empolyee1.salary = Console.ReadLine()
+        For Each Classemployee1 As Classemployee In array1
+            If Classemployee1.id = Empolyee1.id Then
+                EmployeeExists = True
+
+                If (EmployeeExists) Then
+                    Console.WriteLine("Employee details is updated")
+                Else
+                    Console.WriteLine("Employee details not found")
+                End If
+            End If
+        Next
 
     End Sub
+    Public Sub view(ByRef array1 As ArrayList)
+        Dim EmployeeExists As Boolean = False
+        Dim Empolyee1 As Classemployee = New Classemployee
+
+    End Sub
+
+    Public Sub viewall(ByRef array1 As ArrayList)
+
+    End Sub
+
+    Public Sub delete(ByRef array1 As ArrayList)
+
+    End Sub
+
+    Public Sub quit(ByRef array1 As ArrayList)
+
+    End Sub
+
+
+
+
 End Class
 
